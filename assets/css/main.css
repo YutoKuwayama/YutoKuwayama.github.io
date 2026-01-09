@@ -2392,7 +2392,7 @@ input, select, textarea {
 
 	.affiliation-logos img {
 		height: auto;       /* 高さを固定（好みに合わせて変更してください） */
-		width: 200px;        /* 横幅は自動調整 */
+		width: auto;        /* 横幅は自動調整 */
 		margin: 0 15px;     /* ロゴ同士の横の隙間 */
 		vertical-align: middle;
 		opacity: 0.8;       /* 少し透明にして馴染ませる */
