@@ -6,6 +6,19 @@
 -->
 <html>
 	<head>
+		<button class="menu-trigger" id="menu-trigger">
+		  <span></span>
+		  <span></span>
+		  <span></span>
+		</button>
+		
+		<nav class="nav-menu" id="nav-menu">
+		  <ul>
+		    <li><a href="#">TOP</a></li>
+		    <li><a href="#">Profile</a></li>
+		    <li><a href="#">Publications</a></li>
+		    </ul>
+		</nav>
 		<title>Yuto Kuwayama - TOP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -177,9 +190,25 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+		      document.addEventListener('DOMContentLoaded', function() {
+		        const trigger = document.getElementById('menu-trigger');
+		        const menu = document.getElementById('nav-menu');
+		
+		        if (trigger && menu) {
+		          trigger.addEventListener('click', function() {
+		            trigger.classList.toggle('is-active');
+		            menu.classList.toggle('is-active');
+		          });
+		        }
+		      });
+		    </script>
+	  </body>
+	</html>
 
 	</body>
 
 </html>
+
 
 
