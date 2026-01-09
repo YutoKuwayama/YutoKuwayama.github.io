@@ -2514,3 +2514,50 @@ input, select, textarea {
 		background-color: #ffffff;
 		color: #000000 !important;
 	}
+
+		/* PC用：ボタンを隠す */
+	.menu-trigger {
+	  display: none;
+	}
+
+	/* スマホ用：メディアクエリ */
+	@media screen and (max-width: 768px) {
+	  /* PC用メニューを非表示に、または縦並びのスタイルに変更 */
+	  .nav-menu {
+	    display: none; /* 初期状態は非表示 */
+	    position: absolute;
+	    top: 60px; /* ヘッダーの高さに合わせる */
+	    left: 0;
+	    width: 100%;
+	    background: rgba(0, 0, 0, 0.8);
+	  }
+	
+	  /* クラスがついた時だけ表示する設定 */
+	  .nav-menu.is-active {
+	    display: block;
+	  }
+	
+	  /* ハンバーガーボタンを表示 */
+	  .menu-trigger {
+	    display: inline-block;
+	    width: 30px;
+	    height: 24px;
+	    position: relative;
+	    background: none;
+	    border: none;
+	    cursor: pointer;
+	  }
+	  
+	  /* 三本線のスタイル（CSSで描画） */
+	  .menu-trigger span {
+	    display: inline-block;
+	    position: absolute;
+	    left: 0;
+	    width: 100%;
+	    height: 2px;
+	    background-color: #fff;
+	  }
+	  .menu-trigger span:nth-of-type(1) { top: 0; }
+	  .menu-trigger span:nth-of-type(2) { top: 11px; }
+	  .menu-trigger span:nth-of-type(3) { bottom: 0; }
+	}
