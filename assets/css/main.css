@@ -2257,7 +2257,7 @@ input, select, textarea {
 	        /* background-attachment: fixed がスマホで悪さをすることが多いので強制解除 */
 	        background-attachment: scroll !important;
 	        /* 画像のどの部分を中央にするか（左から◯％の位置） */
-	        background-position: top left, 40% 10% !important; 
+	        background-position: top left, 20% 40% !important; 
 	    }
 	}
 
