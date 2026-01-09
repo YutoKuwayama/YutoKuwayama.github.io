@@ -2169,7 +2169,7 @@ input, select, textarea {
 	
 	    /* 文字が入っている箱の位置を下げて顔と被りにくくする */
 	    .main.style1 .content {
-	        padding-top: 15vh !important; /* 画面の高さの15%分、下に下げる */
+	        padding-top: 30vh !important; /* 画面の高さの15%分、下に下げる */
 	    }
 	    
 	    /* 名前のフォントサイズをスマホ用に最適化 */
