@@ -2177,6 +2177,11 @@ input, select, textarea {
 	        font-size: 2.2em !important;
 	        line-height: 1.2em !important;
 	    }
+
+		.main.style2 .content {
+        margin-top: 35vh !important; /* ボックスの上側に大きな隙間を作ります */
+        width: 90% !important;       /* 横幅を少し広げて読みやすくします */
+    	}
 	
 	    /* ロゴの歪み防止（スマホ用） */
 	    .affiliation-logos img {
