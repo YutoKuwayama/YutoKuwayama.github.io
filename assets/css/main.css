@@ -2157,6 +2157,38 @@ input, select, textarea {
 
 		}
 
+		/* --- スマホ表示の最終調整*/
+	@media screen and (max-width: 736px) {
+	    /* 背景画像の位置とサイズの調整 */
+	    #intro, #one {
+	        background-attachment: scroll !important;
+	        /* 高さを120%にして「遊び」を作り、0%(上端)に合わせることで顔を下げる */
+	        background-size: 256px 256px, auto 120% !important;
+	        background-position: top left, 10% 0% !important; 
+	    }
+	
+	    /* 文字が入っている箱の位置を下げて顔と被りにくくする */
+	    .main.style1 .content {
+	        padding-top: 15vh !important; /* 画面の高さの15%分、下に下げる */
+	    }
+	    
+	    /* 名前のフォントサイズをスマホ用に最適化 */
+	    .main.style1 h2 {
+	        font-size: 2.2em !important;
+	        line-height: 1.2em !important;
+	    }
+	
+	    /* ロゴの歪み防止（スマホ用） */
+	    .affiliation-logos img {
+	        height: auto !important;
+	        width: auto !important;
+	        max-width: 180px !important;
+	        margin: 10px auto !important;
+	        display: inline-block !important;
+	    }
+	}
+	/* --- ここまで --- */
+
 /* Footer */
 
 	#footer {
