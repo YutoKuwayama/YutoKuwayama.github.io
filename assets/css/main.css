@@ -2256,7 +2256,7 @@ input, select, textarea {
 	@media screen and (max-width: 736px) {
 
 		#intro {
-			background-position: top left, 42% center;
+			background-position: top left, 20% center;
 		}
 
 	}
@@ -2275,7 +2275,7 @@ input, select, textarea {
 	@media screen and (max-width: 736px) {
 
 		#one {
-			background-position: top left, 50% 70%;
+			background-position: top left, 20% 70%;
 		}
 
 	}
