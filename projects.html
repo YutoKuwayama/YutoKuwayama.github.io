@@ -29,6 +29,23 @@
 						<li><a href="aboutme.html">About Me</a></li>
 					</ul>
                 </nav>
+		    <button class="menu-trigger" id="menu-trigger">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		    </button>
+		
+			<nav id="nav-menu">
+				<ul>
+					<li><a href="index.html">TOP</a></li>
+					<li><a href="profile.html">Profile</a></li>
+					<li><a href="publications.html">Publications</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="presentations.html">Presentations</a></li>
+					<li><a href="Curriculum_Vitae.pdf" target="_blank">CV</a></li>
+					<li><a href="aboutme.html">About Me</a></li>
+				</ul>
+			</nav>
             </header>
 
 		<!-- Intro -->
@@ -96,6 +113,19 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+		      document.addEventListener('DOMContentLoaded', function() {
+		        const trigger = document.getElementById('menu-trigger');
+		        const menu = document.getElementById('nav-menu');
+		
+		        if (trigger && menu) {
+		          trigger.addEventListener('click', function() {
+		            trigger.classList.toggle('is-active');
+		            menu.classList.toggle('is-active');
+		          });
+		        }
+		      });
+		    </script>
 
 	</body>
 </html>

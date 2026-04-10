@@ -2104,9 +2104,9 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			.main > .content br {
+			/* .main > .content br {
 				display: none;
-			}
+			} */
 
 			.main.fullscreen {
 				height: auto !important;
@@ -2157,42 +2157,6 @@ input, select, textarea {
 
 		}
 
-		/* --- スマホ表示の最終調整*/
-	@media screen and (max-width: 736px) {
-	    /* 背景画像の位置とサイズの調整 */
-	    #intro, #one {
-	        background-attachment: scroll !important;
-	        /* 高さを120%にして「遊び」を作り、0%(上端)に合わせることで顔を下げる */
-	        background-size: 256px 256px, auto 120% !important;
-	        background-position: top left, 10% 0% !important; 
-	    }
-	
-	    /* 文字が入っている箱の位置を下げて顔と被りにくくする */
-	    .main.style1 .content {
-	        padding-top: 30vh !important; /* 画面の高さの15%分、下に下げる */
-	    }
-	    
-	    /* 名前のフォントサイズをスマホ用に最適化 */
-	    .main.style1 h2 {
-	        font-size: 2.2em !important;
-	        line-height: 1.2em !important;
-	    }
-
-		.main.style2 .content {
-        margin-top: 35vh !important; /* ボックスの上側に大きな隙間を作ります */
-        width: 90% !important;       /* 横幅を少し広げて読みやすくします */
-    	}
-	
-	    /* ロゴの歪み防止（スマホ用） */
-	    .affiliation-logos img {
-	        height: auto !important;
-	        width: auto !important;
-	        max-width: 180px !important;
-	        margin: 10px auto !important;
-	        display: inline-block !important;
-	    }
-	}
-	/* --- ここまで --- */
 
 /* Footer */
 
@@ -2286,22 +2250,18 @@ input, select, textarea {
 		background-attachment: fixed, fixed;
 		/* background-position: top left, bottom center; */
 		background-position: top left, top center;
+
 		background-repeat: repeat, no-repeat;
 	}
-	
 	@media screen and (max-width: 736px) {
-	    #intro, #one {
-	        /* background-attachment: fixed がスマホで悪さをすることが多いので強制解除 */
-	        background-attachment: scroll !important;
-	        /* 画像のどの部分を中央にするか（左から◯％の位置） */
-	       
 
-			background-size: 256px 256px, auto 120% !important;
-        	/* 縦を0%にすれば画像が下がり、上側に余裕が生まれます */
-        	background-position: top left, 10% 0% !important;
-			/* background-position: top left, 10% 70% !important;  */
-	    }
+		#intro {
+			background-position: top left, 42% center;
+		}
+
 	}
+	
+
 
 /* One */
 
@@ -2312,6 +2272,14 @@ input, select, textarea {
 		/* background-position: top left, center center; */
 		background-position: top left, top center;
 	}
+	@media screen and (max-width: 736px) {
+
+		#one {
+			background-position: top left, 50% 70%;
+		}
+
+	}
+	
 
 /* Two */
 
@@ -2520,44 +2488,82 @@ input, select, textarea {
 	  display: none;
 	}
 
-	/* スマホ用：メディアクエリ */
-	@media screen and (max-width: 768px) {
-	  /* PC用メニューを非表示に、または縦並びのスタイルに変更 */
-	  .nav-menu {
-	    display: none; /* 初期状態は非表示 */
-	    position: absolute;
-	    top: 60px; /* ヘッダーの高さに合わせる */
-	    left: 0;
-	    width: 100%;
-	    background: rgba(0, 0, 0, 0.8);
-	  }
-	
-	  /* クラスがついた時だけ表示する設定 */
-	  .nav-menu.is-active {
-	    display: block;
-	  }
-	
-	  /* ハンバーガーボタンを表示 */
-	  .menu-trigger {
-	    display: inline-block;
-	    width: 30px;
-	    height: 24px;
-	    position: relative;
-	    background: none;
-	    border: none;
-	    cursor: pointer;
-	  }
-	  
-	  /* 三本線のスタイル（CSSで描画） */
-	  .menu-trigger span {
-	    display: inline-block;
-	    position: absolute;
-	    left: 0;
-	    width: 100%;
-	    height: 2px;
-	    background-color: #fff;
-	  }
-	  .menu-trigger span:nth-of-type(1) { top: 0; }
-	  .menu-trigger span:nth-of-type(2) { top: 11px; }
-	  .menu-trigger span:nth-of-type(3) { bottom: 0; }
-	}
+/* --- スマホ・タブレット用 (768px以下) --- */
+@media screen and (max-width: 768px) {
+    /* 初期状態：メニューを隠す */
+	#nav-menu {
+        display: none; 
+        position: fixed; /* スクロールしても位置を固定 */
+        top: 40px !important;        /* ヘッダーのすぐ下に出す */
+        right: 0;
+        width: 135px;    /* ★メニューを細くしました */
+        /* background: #000000 !important; ★背景を真っ白にして透けないように */
+		background: rgba(255, 255, 255, 0.95) !important; /* ★背景を半透明にして少し透けるように */
+        z-index: 10001;  /* ★最前面に表示（他の文字と重ならない） */
+        box-shadow: -2px 5px 15px rgba(0,0,0,0.2); /* 影をつけて立体的に */
+        border: 1px solid #ddd;
+        border-right: none;
+    }
+
+    /* ボタンを押した時（JSでこのクラスを付与します） */
+    #nav-menu.is-active {
+        display: block;
+    }
+
+	#nav-menu ul li {	
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border-bottom: 1px solid #eee !important;
+        background: #ffffff !important; /* ★ここも白にする */
+    }
+
+#nav-menu ul {
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        background: #ffffff !important; /* ★ここも白にする */
+        width: 100% !important;
+    }
+
+    #nav-menu ul li a {
+        padding: 15px;
+        display: block;
+        color: #888 !important;
+		font-size: 0.9rem;  /* 文字を少し小さくしてスマートに */
+        text-decoration: none;
+        font-weight: 900;
+		background: none !important; /* ★背景をなしにして透けるように */
+    }
+
+    /* 三本線ボタンの配置調整 */
+    .menu-trigger {
+        display: block !important; /* スマホでは必ず表示 */
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    /* 三本線の見た目 */
+    .menu-trigger span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: #39454b;
+        margin: 6px auto;
+        transition: all 0.3s;
+    }
+}
+
+/* PCではボタンを隠す */
+@media screen and (min-width: 769px) {
+    .menu-trigger {
+        display: none;
+    }
+}

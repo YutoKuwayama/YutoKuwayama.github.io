@@ -24,17 +24,17 @@
 		        <span></span>
 		    </button>
 		
-		    <nav id="nav-menu">
-		        <ul>
-		            <li><a href="index.html">TOP</a></li>
-		            <li><a href="profile.html">Profile</a></li>
-		            <li><a href="publications.html">Publications</a></li>
-		            <li><a href="projects.html">Projects</a></li>
-		            <li><a href="presentations.html">Presentations</a></li>
-		            <li><a href="Curriculum_Vitae.pdf" target="_blank">CV</a></li>
-		            <li><a href="aboutme.html">About Me</a></li>
-		        </ul>
-		    </nav>
+			<nav id="nav-menu">
+				<ul>
+					<li><a href="index.html">TOP</a></li>
+					<li><a href="profile.html">Profile</a></li>
+					<li><a href="publications.html">Publications</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="presentations.html">Presentations</a></li>
+					<li><a href="Curriculum_Vitae.pdf" target="_blank">CV</a></li>
+					<li><a href="aboutme.html">About Me</a></li>
+				</ul>
+			</nav>
 		</header>
 
 		<!-- Intro -->
@@ -48,7 +48,7 @@
 					<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; max-width: 1000px; margin: 0 auto; text-align: left;">
 					            
 					            <!-- <div style="flex: 1; min-width: 300px; padding-right: 20px;"> -->
-						　　　　　<div style="flex: 1; min-width: 280px; padding: 10px;">
+						        <div style="flex: 1; min-width: 280px; padding: 10px;">
 					                <p>
 					                    Name/ 名前: Yuto Kuwayama/ 桑山裕斗 <br>
 					                    Email: kuwayama[at]astro-osaka.jp <br>
@@ -221,4 +221,29 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+</html>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+		      document.addEventListener('DOMContentLoaded', function() {
+		        const trigger = document.getElementById('menu-trigger');
+		        const menu = document.getElementById('nav-menu');
+		
+		        if (trigger && menu) {
+		          trigger.addEventListener('click', function() {
+		            trigger.classList.toggle('is-active');
+		            menu.classList.toggle('is-active');
+		          });
+		        }
+		      });
+		    </script>
+    </body>
 </html>
