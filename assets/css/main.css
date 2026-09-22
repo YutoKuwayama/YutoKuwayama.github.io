@@ -2243,20 +2243,115 @@ input, select, textarea {
 		}
 
 /* Intro */
+	/* --- TOP ページのヒーロー部分 --------------------------------------- */
+	/* 画像は元データ (3024px) をそのまま使うため被写体が中央に来る。      */
+	/* 文字を左カラムに寄せて顔と重ならないようにする。                    */
+	/* 指定はすべて #intro 以下に限定してあるので、他のセクションや         */
+	/* 他ページの文字配置には影響しない。                                  */
 
 	#intro {
-		background: url("images/overlay.png"), url("../../images/expo.jpeg");
+		background: url("images/overlay.png"), url("../../images/expo-wide.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
-		/* background-position: top left, bottom center; */
 		background-position: top left, top center;
-
 		background-repeat: repeat, no-repeat;
+
+		/* 中央揃え (.main.style1) を打ち消して左カラムにする */
+		-moz-justify-content: flex-start;
+		-webkit-justify-content: flex-start;
+		-ms-justify-content: flex-start;
+		justify-content: flex-start;
+		text-align: left;
 	}
+
+		#intro > .content {
+			width: 32em;
+			max-width: 42%;
+			margin: 0 0 0 4.5em;
+		}
+
+			/* 見出し・本文・ボタンを同じ左端に揃える */
+			#intro > .content header,
+			#intro > .content h2,
+			#intro > .content p,
+			#intro > .content footer {
+				text-align: left;
+			}
+
+			#intro > .content p {
+				font-size: 0.85em;
+				line-height: 1.8;
+			}
+
+	/* タブレット：カラムを少し広げる */
+	@media screen and (max-width: 1280px) {
+
+		#intro > .content {
+			max-width: 50%;
+			margin-left: 3em;
+		}
+
+	}
+
+	@media screen and (max-width: 980px) {
+
+		/* 画面が縦長になり横方向が切り取られるので、               */
+		/* 被写体を少し右に寄せて左カラムの文字と離す               */
+		#intro {
+			background-position: top left, 15% top;
+		}
+
+		#intro > .content {
+			max-width: 52%;
+			margin-left: 2.5em;
+		}
+
+	}
+
+	/* スマートフォン：横幅が足りないので文字は全幅に戻し、               */
+	/* 画像は被写体が画面に入る位置まで横にずらす。                        */
 	@media screen and (max-width: 736px) {
 
 		#intro {
-			background-position: top left, 20% center;
+			background-image: url("images/overlay.png"), url("../../images/expo-wide-small.jpg");
+			background-position: top left, 48% top;
+
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+
+			-moz-align-items: flex-end;
+			-webkit-align-items: flex-end;
+			-ms-align-items: flex-end;
+			align-items: flex-end;
+
+			padding-bottom: 3em;
+		}
+
+			#intro > .content {
+				width: 100%;
+				max-width: 100%;
+				margin: 0;
+			}
+
+				#intro > .content p {
+					font-size: 0.8em;
+					line-height: 1.7;
+				}
+
+	}
+
+	/* 小さいスマートフォン：文字量が画面を覆わないよう一段小さく */
+	@media screen and (max-width: 480px) {
+
+		#intro > .content h2 {
+			font-size: 2.3em;
+		}
+
+		#intro > .content p {
+			font-size: 0.72em;
+			line-height: 1.65;
 		}
 
 	}
