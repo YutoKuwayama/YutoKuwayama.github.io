@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+/* 日本語用のウェブフォント。閲覧者の端末にフォントが無くても，また
+   「桒」のような JIS X 0208 外の字でも同じ字形で表示されるようにする。 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
 @import url("fontawesome-all.min.css");
 
 /*
@@ -500,7 +503,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, textarea, select {
-		font-family: "Source Sans Pro", "sans-serif";
+		font-family: "Source Sans Pro", "Noto Sans JP", sans-serif;
 		font-weight: 300;
 		font-size: 18pt;
 		line-height: 1.75em;
