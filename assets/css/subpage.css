@@ -294,6 +294,15 @@
 		color: rgba(255, 255, 255, 0.7);
 	}
 
+	/* 画像の出典表記。本文より一段落とす */
+	.subpage .project-credit {
+		margin-top: 0.4em;
+		font-size: 0.75em;
+		line-height: 1.5;
+		letter-spacing: 0.02em;
+		color: rgba(255, 255, 255, 0.45);
+	}
+
 /* ===== タブレット ===== */
 
 	@media screen and (max-width: 980px) {

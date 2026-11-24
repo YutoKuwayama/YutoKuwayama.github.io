@@ -82,6 +82,10 @@
 			var $gallery = $('.gallery');
 
 			$gallery.poptrox({
+				// Only the image links open the lightbox. Without this poptrox
+				// claims every <a> inside the gallery and strips its href,
+				// which would kill the links in the project captions.
+				selector: 'a.image',
 				baseZIndex: 10001,
 				useBodyOverflow: false,
 				usePopupEasyClose: false,
